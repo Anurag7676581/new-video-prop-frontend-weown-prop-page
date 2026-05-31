@@ -1,0 +1,90 @@
+.selectBox{
+    
+
+    color:#999999;
+    cursor:pointer;
+    display:flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap:0.5rem;
+    gap:var(--flexgap);
+    /* width:var(--selectBoxwidth); */
+    background-color: red;
+    /* width:100%; */
+    width: 8rem;
+
+    background-color: var(--bgColor);
+  
+    padding:1rem;
+   
+    border-radius: 10px;
+    
+    position:relative;
+    z-index:0;
+}
+
+@media(max-width:768px) {
+    .selectBox{
+        width:var(--selectBoxwidth);  
+        justify-content: space-between;
+        gap:0;            
+
+    }
+}
+
+
+
+@media(max-width:390px) {
+    .selectBox{
+        gap:0.2rem;
+        
+    }
+}
+
+
+
+
+.droplogo{
+    width:1rem;
+}
+
+@media(min-width:769px) {
+    .droplogo{
+        width:0.7rem;
+    }
+}
+
+.optionBox{
+    position:absolute;
+   width:100%;
+   min-width: fit-content;
+   top:100%;
+    left:0;
+    right:0;
+    appearance: none;
+    
+   
+    border:none;
+    outline:none;
+    background:#EEEEEE;   
+    border: 1px solid #E1E1E1; 
+    border-radius: 10px;
+    padding: 1rem;
+    color:#999999;
+    font-weight: 600;
+    z-index:1;
+     
+}
+
+/* .rotate180{
+    transform:rotate(180deg);
+} */
+.rotate180{
+    -webkit-transform: rotate(180deg); /* Safari and Chrome */
+    -moz-transform: rotate(180deg);    /* Firefox */
+    -ms-transform: rotate(180deg);     /* Internet Explorer 9 */
+    -o-transform: rotate(180deg);      /* Opera */
+    transform: rotate(180deg);
+    /* Optional: add transition for smooth rotation */
+    /* transition: transform 0.5s ease-in-out; */
+}

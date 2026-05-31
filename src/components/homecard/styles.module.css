@@ -1,0 +1,36 @@
+.maindiv{   
+    border-radius: 10px;     
+
+    position: relative;  
+    /* min-width:10rem; */
+    width: 100%;
+    height:100%;
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  background-color: yellow;
+}
+
+.titledivp{   
+  position: absolute; 
+ left:0.5rem;
+ right:0.5rem;  
+  bottom:1rem;
+  display: flex;
+  flex-direction: column; 
+  gap:0.3rem;
+  color: #fff;
+  z-index: 2;
+
+}
+
+.bgopacitycolor{
+    content: "''";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;  
+  z-index: 1;
+  border-radius: 10px;
+}

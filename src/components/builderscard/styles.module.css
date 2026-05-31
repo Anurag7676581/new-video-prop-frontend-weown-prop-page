@@ -1,0 +1,92 @@
+.maindiv{
+    display: flex;
+    flex-direction: column;
+    
+    padding: 1.5em;
+    background-color: #F6F6F6;
+    border:1px solid #E1E1E1;
+    border-radius: 10px;
+    /* border-style: solid ;
+    border-color: #D0D0D0;
+    border-width: 1px; */
+    transition: all 0.3s ease-in-out;
+}
+
+.maindiv:hover{
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.imagediv{
+    border-radius: 15px;
+    /* padding: 1em; */
+    width: 100%;
+    aspect-ratio:4/3;
+    overflow:hidden;   
+    align-self: center;
+    /* cursor:pointer; */
+}
+
+.ogimg{
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.ogimg:hover{
+    transform: scale(1.1);
+    
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    line-height: 1.5;
+    margin-block:1.5rem;
+}
+.heading{
+    font-size: 1.2em;
+    font-weight: 700;
+
+}
+.subheading{
+    font-size: 0.8em;
+    font-weight: 400;
+  
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+    /* padding: 1em; */
+    justify-content: space-between;
+}
+
+.capsule{
+    background-color: rgba(234, 234, 234, 1);
+    border-radius: 25px;
+    padding: 0.7em ;
+    
+    font-size: 1em;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    /* item */
+}
+
+.sendImg{
+    width: 50%;
+    
+}
+
+.visit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lastdiv{
+    display: flex;
+    justify-content: space-around;
+    gap:1rem;
+    align-items: center;
+}

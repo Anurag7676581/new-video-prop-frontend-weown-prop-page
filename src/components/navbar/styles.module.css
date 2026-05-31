@@ -1,0 +1,249 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #0F0B3E;
+  /* color:red; */
+  /* padding-inline: 1rem; */
+  /* padding:1rem; */
+  padding: 0;
+  background-color: #FAFAFE;
+  /* background-color: yellow; */
+  font-family: "Urbanist", sans-serif;
+  z-index: 999;
+  animation: fadeIn 1s forwards;
+  height: 76px;
+
+}
+
+.sidebarouterContainer {
+  /* font-family: Urbanist; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* Initially hidden */
+  /* width: 256px; */
+  height: 100vh;
+  background: transparent;
+  /* background-color: transparent; */
+  width: 75%;
+  z-index: 1000;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.logo {
+  /* max-height: 30px; */
+  width: 7rem;
+
+}
+
+
+
+.navCenter {
+  display: flex;
+  align-items: center;
+
+}
+
+.navOptions {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+
+  /* background:greenyellow */
+
+}
+
+
+
+@media(max-width:1000px) {
+  .logo {
+    width: 5rem;
+  }
+
+  .navOptions {
+    gap: 1rem;
+  }
+}
+
+.navoption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 650;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  /* cursor:pointer; */
+
+
+
+
+}
+
+
+.navOptions li a {
+
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+/* .navOptions li {
+    margin-right: 25px;
+    
+  } */
+
+.navRight {
+  display: flex;
+  /* justify-content: space-between; */
+  /* gap:0.3rem; */
+  align-items: center;
+  justify-content: center;
+  background-color: #7065f0;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  /* cursor: pointer; */
+}
+
+.navRight a {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.aiAssistantButton {
+  background: linear-gradient(135deg, #7065f0 0%, #5a4fdb 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.aiAssistantButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(112, 101, 240, 0.3);
+}
+
+.aiAssistantButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 1200px) {
+  .aiAssistantButton span {
+    display: none;
+  }
+
+  .aiAssistantButton {
+    padding: 0.5rem;
+    border-radius: 50%;
+  }
+}
+
+.registerButton {
+  background-color: rgba(112, 101, 240, 0.1);
+  color: rgba(112, 101, 240, 1);
+  padding: 0.7em;
+  border-radius: 6px;
+  width: 5em;
+  text-align: center;
+}
+
+.loginButton {
+  background-color: rgba(112, 101, 240, 1);
+  color: white;
+  padding: 0.7em;
+  border-radius: 6px;
+  width: 5em;
+  text-align: center;
+}
+
+.rotate180 {
+  transition: transform 0.3s ease-in-out;
+}
+
+.dropdown {
+  opacity: 0.2;
+  visibility: hidden;
+  position: fixed;
+  top: 76px;
+  left: 0;
+  right: 0;
+  z-index: 998;
+}
+
+.dropdown:hover,
+.view:hover+.dropdown {
+  /* display: block; */
+  opacity: 1;
+  /* top:60px; */
+  visibility: visible;
+  /* transition:all 0.3s linear;  */
+}
+
+.view:hover .rotate180,
+.dropdown:hover .rotate180 {
+  -webkit-transform: rotate(180deg);
+  /* Safari and Chrome */
+  -moz-transform: rotate(180deg);
+  /* Firefox */
+  -ms-transform: rotate(180deg);
+  /* Internet Explorer 9 */
+  -o-transform: rotate(180deg);
+  /* Opera */
+  transform: rotate(180deg);
+  /* Optional: add transition for smooth rotation */
+  /* transition: transform 0.3s ease-in-out; */
+}
+
+.rotate1802 {
+  -webkit-transform: rotate(180deg);
+  /* Safari and Chrome */
+  -moz-transform: rotate(180deg);
+  /* Firefox */
+  -ms-transform: rotate(180deg);
+  /* Internet Explorer 9 */
+  -o-transform: rotate(180deg);
+  /* Opera */
+  transform: rotate(180deg);
+  /* Optional: add transition for smooth rotation */
+  /* transition: transform 0.3s ease-in-out; */
+}

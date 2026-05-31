@@ -1,0 +1,11 @@
+.desc{
+  font-weight: 500;  
+
+    width: 80%;
+  }
+  
+  @media(max-width:800px) {
+    .desc{
+      width:100%;
+    }
+  }

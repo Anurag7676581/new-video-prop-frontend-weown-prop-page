@@ -1,0 +1,40 @@
+.flexRow {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+  height: auto;
+  padding-top:20px;
+  overflow:auto;
+  
+  padding-inline:  10px;
+  background: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  /* border-bottom:0.5px solid #7065f0; */
+  
+  white-space:nowrap;
+}
+
+.textdivp {
+  cursor: pointer;
+  margin: 0 10px;
+  
+  /* background:red; */
+  /* padding-inline:2rem; */
+}
+
+.text{
+  font-family: Outfit;
+  font-size: 1rem;
+ 
+  font-weight: 550;
+}
+
+.textdivp.active {
+  color: #7065f0;
+  border-bottom: 3px solid #7065f0;
+  /* background:yellow; */
+}
+
+

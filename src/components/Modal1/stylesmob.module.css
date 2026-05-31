@@ -1,0 +1,108 @@
+.maindiv{
+    background-color: #7065f0;   
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;   
+    margin:0;
+    padding:0;  
+}
+.thankmaindiv{
+    
+        position: fixed; 
+        top:0;
+        left:0;
+        width:100%;
+        height: 100%;
+        backdrop-filter: blur(5px);
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        z-index:50;
+    
+}
+.seconddiv{
+    display:flex;
+    flex-direction: column;
+    /* height:60%; */
+    width:100%; 
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+    box-shadow: 0 3px 3px 0px black;
+    padding-inline:2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+    
+    bottom: 0px;
+    position: absolute;
+}
+.thankyouseconddiv{
+    display:flex;
+    flex-direction: column;
+    /* height:30%;
+    width:50%; */
+   gap:0.7rem;    align-items: center;
+    background-color: white;
+    border-radius: 3rem;
+    box-shadow: 0 3px 3px 0px black;
+    padding:2rem;
+    /* padding-block: 4rem; */
+    
+    
+    position: relative;
+}
+
+
+.searchText{
+  
+    margin-bottom:0.5rem;
+  
+
+width: 100%; 
+
+height:0rem;
+border:none;
+border-color:#cfc8fb;
+background-color: #efecff;
+
+border-radius: 0.5rem;
+
+padding: 1rem;
+}
+.searchText2{
+  
+    margin-bottom:0.5rem;
+  
+
+width: 100%; 
+
+height:0rem;
+border:none;
+
+border-color:#cfc8fb;
+background-color: #efecff;
+border-radius: 0.5rem;
+
+padding: 1rem;
+}
+
+.searchText1{
+    
+
+   
+
+width: 100%; 
+
+margin-bottom:0.2rem;
+
+
+
+background-color: #efecff;
+border-radius: 0.5rem;
+border-color:#cfc8fb;
+
+padding: 1rem;
+}
+

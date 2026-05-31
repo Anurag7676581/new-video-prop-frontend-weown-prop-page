@@ -1,0 +1,116 @@
+.search {
+  width: 100%;
+  position: relative;
+  padding: 2rem 1.5rem 2rem 1rem;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap:0.2rem;
+  
+  
+  align-items: center;
+  /* overflow:auto; */
+}
+
+.dropdowndiv{
+  border:none;
+  outline:none;
+  color:rgb(68, 67, 67);
+  background-color: yellow;
+
+  font-size:1.05rem;
+}
+
+.dropdowndiv option{
+  /* font-weight: bold; */
+}
+
+
+.inputBox {
+ min-width: 70%;
+ /* width:5rem; */
+  height: 3rem;
+  padding-left:0.8rem;
+  /* margin-left: 0.5rem; */
+  /* background: transparent; */
+  border-left:1px solid #999999;
+  font-size: 1rem;
+
+
+  /* margin-left: 1rem; */
+  /* border:1px solid black; */
+}
+.searchover{
+  min-width: 73%;
+}
+
+@media(max-width:600px) {
+  .searchover{
+    min-width: 90%;
+  }
+}
+
+/* .btn{
+  height:3rem
+} */
+
+.selectBox{
+  
+  cursor:pointer;
+  display:flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  /* width:27%; */
+  gap:0.8rem;
+  background-color: #ffffff;
+  /* background-color: yellow; */
+  /* border:1px solid #E1E1E1; */
+ 
+  
+  min-width:fit-content;
+  /* position:relative; */
+  z-index:0;
+  
+}
+.optionBox{
+  position:absolute;
+ width:30%;
+  /* bottom:4rem; */
+  top:100%;
+ 
+  left:0rem;
+  /* right:0rem; */
+  appearance: none;
+  min-width:fit-content;
+ 
+  border:none;
+  outline:none;
+  background:#EEEEEE;   
+  border: 1px solid #E1E1E1; 
+  border-radius: 20px;
+  padding: 1rem;
+  
+  z-index:1;
+   
+}
+
+
+
+.arrowimgdiv{
+  width:0.9rem;
+  
+}
+
+.rotate180{
+    -webkit-transform: rotate(180deg); /* Safari and Chrome */
+    -moz-transform: rotate(180deg);    /* Firefox */
+    -ms-transform: rotate(180deg);     /* Internet Explorer 9 */
+    -o-transform: rotate(180deg);      /* Opera */
+    transform: rotate(180deg);
+    /* Optional: add transition for smooth rotation */
+    transition: transform 0.5s ease-in-out;
+}
+
+

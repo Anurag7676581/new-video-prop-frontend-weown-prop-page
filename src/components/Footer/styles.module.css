@@ -1,0 +1,122 @@
+.main{
+    background-color: #7065f0;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    z-index: -1;
+    position: relative;
+}
+
+.img1{
+    height: 300px;
+    width: 350px;
+}
+.img2{
+    height: 380px;
+    width: 430px;
+}
+.images{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    z-index: 1;
+    position: absolute;
+}
+.content{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: 100;
+    position: absolute;
+}
+.logo{
+    /* background-color: red; */
+
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.brand{
+    height: 110px;
+    width: 300px;
+}
+.links{
+    height: 60%;
+    width: 100%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.linkBox{
+    height: 250px;
+    width: 200px;
+    /* background-color: coral; */
+    padding: 0 10px;
+
+}
+.title{
+    height: 20%;
+    width: 100%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: white;
+}
+.sub{
+    height: 80%;
+    width: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    text-decoration: none;
+
+}
+
+.ref{
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+}
+
+.copyrights{
+    height: 15%;
+    /* background: #000; */
+    /* border-top: 1px solid white ; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2vw;
+}
+
+.foot{
+    height: 100%;
+    width: 56%;
+    border-top: 1px solid white ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text{
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 360px) and (max-width:997px){
+    body {
+      width: 1080px;
+    }
+  }

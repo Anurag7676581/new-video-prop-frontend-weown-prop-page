@@ -1,0 +1,29 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:#0F0B3E;
+    /* color:red; */
+    padding: 1rem;
+    background-color: #FAFAFE;
+    /* background-color: yellow; */
+    font-family: "Urbanist", sans-serif;
+    z-index: 999;
+    animation: fadeIn 1s forwards;
+    /* height:50px; */
+}
+
+.logo{
+    width:5rem;
+    /* height:2rem; */
+        
+}
+
+.hamburgerdiv{
+    width:2rem;
+}
+

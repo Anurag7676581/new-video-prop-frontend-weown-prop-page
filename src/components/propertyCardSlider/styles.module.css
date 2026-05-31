@@ -1,0 +1,37 @@
+.sliderdivp {
+    width: 100%;
+    margin: 0 auto;
+    padding:4rem 0 2rem 0;
+    border-bottom: 1px solid #E1E1E1;
+    
+    /* margin: 0 10px; */
+    /* gap:2rem; */
+  
+  }
+
+  
+  .circle{
+    border: 1px solid #E1E1E1;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -5.5rem;
+  /* right: 3rem; */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #808080;
+  width: 2.5rem;
+  height: 2.5rem;
+  }
+
+  .circle:hover{
+    background-color: #EAEAEA;
+    border: 1px solid #E1E1E1
+  }
+
+  .circle:hover .arrow {
+    color: #0F0B3E; /* Change this to your desired color */
+  }
+
+  

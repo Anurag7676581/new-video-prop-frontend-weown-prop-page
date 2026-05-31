@@ -1,0 +1,166 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #7065f0;
+    padding: 1rem;
+    color:#0F0B3E;
+    font-family: "Urbanist", sans-serif;
+    z-index: 999;
+    animation: fadeIn 1s forwards;
+    height: 76px;
+
+}
+
+.sidebarouterContainer{
+  /* font-family: Urbanist; */
+    position: fixed;
+  top: 0;
+  left: 0; /* Initially hidden */
+  /* width: 256px; */
+  height: 100vh;
+  background: transparent;
+  /* background-color: transparent; */
+  width: 75%;
+  z-index:1000;
+}
+  
+  .logo{
+    width:7rem;
+  }
+
+  .center{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    gap:2rem;
+    width:70%;
+    /* gap:2rem; */
+  }
+
+  .dropdown1{
+    display: flex;
+    align-items: center;
+    background-color: #7065f0;
+  }
+  
+  .navCenter {
+    width:70%;
+    /* height:50%; */
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding:0.2rem 0.5rem;
+    align-items: center;
+    border-radius: 5px;
+    /* background-color: transparent; */
+    
+  }
+
+  .searchbar{
+    background-color: #ffffff;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+    gap:1rem;
+   
+  }
+
+  .searchtext{
+    padding: 0.2rem 1rem;
+    border-left: 1px solid #3F3D565E;
+    width: 100%; 
+    
+  }
+  input{
+
+    width:100%;
+  }
+  
+  .navOptions {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+   
+  }
+
+  .navOptions li a {
+    color: black;
+    text-decoration: none; 
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  
+  
+  .navOptions li {
+    margin-right: 25px;
+    
+  }
+  
+  /* .navRight {
+    display: flex;
+ 
+    gap:0.3rem;
+    align-items: center;
+    background-color:rgb(245, 245, 254, 0.99);;
+    padding:0.5rem 0.8rem;
+    border-radius: 999px;
+
+  } */
+
+
+
+  .navRight {
+    display: flex;
+    
+    align-items: center;
+    gap:0rem;
+    background-color:rgb(245, 245, 254, 0.99);;
+    padding:0.5rem 0.8rem;
+    border-radius: 999px;
+    
+  }
+  
+  .navRight a {
+    margin-left: 10px;
+    text-decoration: none;
+  }
+  
+  .registerButton{
+    background-color: rgba(112, 101, 240, 0.1);
+    color: rgba(112, 101, 240, 1);
+    padding: 0.7em;
+    border-radius: 6px;
+    width: 5em;
+    text-align: center;
+  }
+
+.loginButton {
+  background-color: rgba(112, 101, 240, 1);
+  color: white;
+  padding: 0.7em;
+  border-radius: 6px;
+  width: 5em;
+  text-align: center;
+}
+
+.dropdowndiv select{
+  cursor:pointer;
+}
+
+
+

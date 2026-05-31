@@ -1,0 +1,16 @@
+.dropdownContainer{
+    text-align: left;
+    margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap:0.8rem;
+    font-size: 0.9rem;
+    font-weight: 550;
+    margin-bottom: 1rem;;
+    /* background-color: aqua; */
+    
+}
+
+.list{
+    cursor:pointer;
+}

@@ -1,0 +1,61 @@
+.megaDropdown {
+ 
+ margin-inline: auto;
+  width: 100%;
+  /* opacity: 1; */
+  
+  /* background-color: rgba(112, 101, 240, 0.8); */
+  background: rgb(245, 245, 254, 0.99);
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  transition: top 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+  /* height: 50%; */
+  border-radius: 0px 0px 50px 50px;
+  
+}
+
+.megaDropdown.show {
+  
+  opacity: 1;
+  top: 4.5em;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:3rem;
+}
+
+/* .megaCategory {
+  
+} */
+
+/* .megaCategory h4 {
+  margin-bottom: 8px;
+} */
+
+/* .megaCategory ul {
+  list-style: none;
+  padding: 0;
+} */
+
+.megaCategory li {
+  cursor: pointer;
+}
+
+.subcategory{
+  background-color: white;
+  padding:1rem;
+  text-align: left;
+  /* float: left; */
+  border-radius: 10px;
+}
+
+ul{
+  margin-top:1rem;
+}
+.heading{
+  color:#7065f0;
+  font-size: 1rem;;
+}

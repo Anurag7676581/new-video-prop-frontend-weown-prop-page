@@ -1,0 +1,22 @@
+.sliderdivp {
+    width: 100%;
+    margin: 0 auto;
+    padding:4rem 0 2rem 0;
+    border-bottom: 1px solid #E1E1E1;
+    
+    /* margin: 0 10px; */
+    /* gap:2rem; */
+  
+  }
+
+  .rotate180{
+    -webkit-transform: rotate(180deg); /* Safari and Chrome */
+    -moz-transform: rotate(180deg);    /* Firefox */
+    -ms-transform: rotate(180deg);     /* Internet Explorer 9 */
+    -o-transform: rotate(180deg);      /* Opera */
+    transform: rotate(180deg);
+    /* Optional: add transition for smooth rotation */
+    transition: transform 0.5s ease-in-out;
+  }
+
+  

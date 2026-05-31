@@ -1,0 +1,18 @@
+.flexRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  background-color: rgba(234, 234, 234, 1);
+  border-radius: 15px;
+  padding: 4px;
+  font-size: 0.8em;
+  gap: 2px;
+}
+
+.text {
+  font-family: Urbanist;
+  font-size: 12px;
+  font-weight: 400;
+  color: #0f0b3e;
+}

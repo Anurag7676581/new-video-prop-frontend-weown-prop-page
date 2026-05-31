@@ -1,0 +1,151 @@
+/* .footerdiv{
+    position: absolute;
+    bottom: -80vh;
+    left: 0;
+    right: 0;
+} */
+
+
+.footer{
+    background-color: #7065f0;
+  
+    padding:2rem 1rem;
+    width:100%;    
+    
+}
+
+.maindiv{
+    width: 100%;
+    margin-inline: auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap:2rem; */
+    /* background-color: yellow; */
+}
+
+.grid {
+    /* font-size: 1.2rem; */
+    /* font-weight: 500; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap:4rem;
+    /* grid-template-columns: repeat(6, 1fr);  */
+    width:100%;
+    /* align-items: center; */
+    /* gap:6rem; */
+  }
+
+.sectiondivp{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+
+.section{
+    display: flex;
+    justify-content: space-between;
+    gap:0.5rem;
+    flex-wrap: wrap;
+    width:100%;
+}
+
+.droplogo{
+    width:1rem;
+}
+
+
+
+
+.searchbar{
+    margin-top: 0.5rem;
+    background-color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap:0.5rem;
+    align-items: center;
+    width:100%;
+}
+
+input{
+    outline:none;
+    border:none;
+}
+
+.firstcol{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    /* background-color: yellow; */
+    
+}
+.consentpara{
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+    width:100%;
+    float: left;
+
+}
+
+.logo{
+    width:7rem;
+}
+.searchlogo{
+    width:8%;
+}
+
+.copyright{
+    padding:2rem;
+    background-color: transparent;
+    display:flex;
+
+    flex-direction: column-reverse;
+    gap:2rem;
+    align-items: center;
+}
+
+.copyrightpara{
+    color:white;
+    font-size: 0.75rem;
+    text-align: center;
+    /* text-align: center; */
+    /* margin-top: 1rem; */
+}
+
+.contactdiv{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.socialdiv{
+    width: 3rem;
+    height: 3rem;
+    padding:1rem;
+    border-radius: 9999px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+@media(max-width:175px) {
+    .socialdiv{
+        width:1rem;
+        height:1rem;
+        padding:0.2rem;
+        }
+}
+
+@media(min-width:176px) and (max-width:250px) {
+    .socialdiv{
+    width:2rem;
+    height:2rem;
+    padding:0.5rem;
+    }
+}

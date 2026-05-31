@@ -1,0 +1,56 @@
+.reviewcard{
+    background: rgba(246, 246, 246, 1);
+    border: 1px solid rgba(249, 249, 249, 1);
+    border-radius: 12px, 12px, 0px,0px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-between;
+    /* width:100%; */
+    /* aspect-ratio:3; */
+    min-height:fit-content;
+   
+  }
+  
+  .reviewcardsection2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+    background: rgba(112, 101, 240, 0.1);
+    padding:1rem 0;
+    
+  
+  }
+  
+  .reviewgriddiv{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:2rem;
+  }
+  .reviewgriddiv:nth-child(1){
+    border-right: 2px solid #E1E1E1;
+  }
+  
+  .reviewcardsection1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    gap:1rem;
+    padding:0 2rem;
+  }
+  
+  
+
+  .section6likeimgdiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:2.5rem;
+    height:2rem;
+    background:white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+    cursor:pointer;
+    /* padding:2r */
+  }
