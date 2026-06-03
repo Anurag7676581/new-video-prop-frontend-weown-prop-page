@@ -36,6 +36,8 @@ function normalizeVideoPropProperty(raw) {
     size: raw.size,
     price: raw.price || raw.listing_price,
     view3durl: raw.view3durl || raw.videoUrl,
+    videoUrlNight: raw.videoUrlNight,
+    videoUrlMobileNight: raw.videoUrlMobileNight,
     images: raw.images?.length ? raw.images : raw.imageUrl ? [raw.imageUrl] : [],
     floor_images: raw.floor_images || [],
     features: raw.features || [],

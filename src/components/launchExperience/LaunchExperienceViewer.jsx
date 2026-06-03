@@ -3,6 +3,8 @@ import { FaStar } from "react-icons/fa6";
 import { HiHome, HiOutlineLocationMarker } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import useIsMobile from "../../hooks/useIsMobile";
+import useNightVideoSchedule from "../../hooks/useNightVideoSchedule";
+import { resolveVideoUrl } from "../../utils/videoSchedule";
 import {
   extractSlugFromView3dUrl,
   fetchAmenities,
@@ -179,6 +181,7 @@ const InfoCard = ({ imageSrc, title, ownerName, rating, reviewCount, description
 
 const HomeSection = ({ selectedSlug, onInquireClick }) => {
   const isMobile = useIsMobile();
+  const isNight = useNightVideoSchedule();
   const [propertyData, setPropertyData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -221,10 +224,16 @@ const HomeSection = ({ selectedSlug, onInquireClick }) => {
     return <div className={`${styles.centerState} ${styles.centerStateError}`}>Error: {error || "No property data"}</div>;
   }
 
-  const videoSrc =
-    isMobile && propertyData.videoUrlMobile
-      ? propertyData.videoUrlMobile
-      : propertyData.videoUrl;
+  const videoSrc = resolveVideoUrl(
+    {
+      videoUrl: propertyData.videoUrlDay || propertyData.property?.videoUrl,
+      videoUrlMobile:
+        propertyData.videoUrlMobileDay || propertyData.videoUrlMobile,
+      videoUrlNight: propertyData.videoUrlNight,
+      videoUrlMobileNight: propertyData.videoUrlMobileNight,
+    },
+    isMobile
+  );
   const imageSrc =
     isMobile && propertyData.property.imageUrlMobile
       ? propertyData.property.imageUrlMobile
@@ -232,7 +241,7 @@ const HomeSection = ({ selectedSlug, onInquireClick }) => {
 
   return (
     <div className={styles.sectionLayer}>
-      <VideoPlayer src={videoSrc} />
+      <VideoPlayer key={`${videoSrc}-${isNight}`} src={videoSrc} />
       <InfoCard
         imageSrc={imageSrc}
         title={propertyData.property.name}
@@ -257,6 +266,7 @@ const HomeSection = ({ selectedSlug, onInquireClick }) => {
 
 const AmenitiesSection = ({ propertyId, onInquireClick }) => {
   const isMobile = useIsMobile();
+  const isNight = useNightVideoSchedule();
   const [amenities, setAmenities] = useState([]);
   const [selectedAmenity, setSelectedAmenity] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -309,10 +319,7 @@ const AmenitiesSection = ({ propertyId, onInquireClick }) => {
     return <div className={`${styles.centerState} ${styles.centerStateError}`}>Error: {error || "No amenities available"}</div>;
   }
 
-  const videoSrc =
-    isMobile && selectedAmenity.videoUrlMobile
-      ? selectedAmenity.videoUrlMobile
-      : selectedAmenity.videoUrl;
+  const videoSrc = resolveVideoUrl(selectedAmenity, isMobile);
   const thumbnails =
     isMobile && selectedAmenity.thumbnailImagesMobile?.length === 2
       ? selectedAmenity.thumbnailImagesMobile
@@ -320,7 +327,7 @@ const AmenitiesSection = ({ propertyId, onInquireClick }) => {
 
   return (
     <div className={styles.sectionLayer}>
-      <VideoPlayer src={videoSrc} />
+      <VideoPlayer key={`${selectedAmenity.id}-${videoSrc}-${isNight}`} src={videoSrc} />
       <div className={styles.listPanel}>
         {amenities.map((amenity) => (
           <button
@@ -391,6 +398,7 @@ const SurroundingsSection = ({ propertyName, onInquireClick }) => {
 
 const InteriorSection = ({ propertyId, onInquireClick }) => {
   const isMobile = useIsMobile();
+  const isNight = useNightVideoSchedule();
   const [interiors, setInteriors] = useState([]);
   const [selectedInterior, setSelectedInterior] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -443,10 +451,7 @@ const InteriorSection = ({ propertyId, onInquireClick }) => {
     return <div className={`${styles.centerState} ${styles.centerStateError}`}>Error: {error || "No interiors available"}</div>;
   }
 
-  const videoSrc =
-    isMobile && selectedInterior.videoUrlMobile
-      ? selectedInterior.videoUrlMobile
-      : selectedInterior.videoUrl;
+  const videoSrc = resolveVideoUrl(selectedInterior, isMobile);
   const thumbnails =
     isMobile && selectedInterior.thumbnailImagesMobile?.length === 2
       ? selectedInterior.thumbnailImagesMobile
@@ -454,7 +459,7 @@ const InteriorSection = ({ propertyId, onInquireClick }) => {
 
   return (
     <div className={styles.sectionLayer}>
-      <VideoPlayer src={videoSrc} />
+      <VideoPlayer key={`${selectedInterior.id}-${videoSrc}-${isNight}`} src={videoSrc} />
       <div className={styles.listPanel}>
         {interiors.map((interior) => (
           <button
