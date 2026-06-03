@@ -48,6 +48,9 @@ const PropertyDescription = () => {
 
   const [stick, setStick] = useState(false);
   const [section, setSection] = useState(1);
+  // Mirror the active section in a ref so the (once-subscribed) scroll listener
+  // always compares against the current value instead of a stale closure.
+  const sectionRef = useRef(1);
   const [activeTab, setActiveTab] = useState("Overview");
   const reducescroll = 76;
 
@@ -71,9 +74,12 @@ const PropertyDescription = () => {
 
     let nextSection = 1;
 
+    // Keep "Overview" active across the top band of the hero; only switch to
+    // "Highlights" once the user scrolls down into the details of section 2.
+    const overviewBand = 240;
     if (
       section2?.current &&
-      window.scrollY >= section2.current.offsetTop - reducescroll &&
+      window.scrollY >= section2.current.offsetTop - reducescroll + overviewBand &&
       window.scrollY <=
         section2.current.offsetTop + section2.current.offsetHeight - reducescroll
     ) {
@@ -108,7 +114,8 @@ const PropertyDescription = () => {
       nextSection = 6;
     }
 
-    if (nextSection !== section) {
+    if (nextSection !== sectionRef.current) {
+      sectionRef.current = nextSection;
       setSection(nextSection);
       setActiveTab(sectionDefaultTab[nextSection]);
     }
@@ -116,34 +123,52 @@ const PropertyDescription = () => {
 
   useEffect(() => {
     handlescroll();
-    window.addEventListener("scroll", handlescroll);
-    return () => window.removeEventListener("scroll", handlescroll);
-  }, []);
+    window.addEventListener("scroll", handlescroll, { passive: true });
+    window.addEventListener("resize", handlescroll);
+    window.addEventListener("load", handlescroll);
+    // Section offsets shift as images/content load in; recompute so the active
+    // tab settles on Overview at the top instead of mis-detecting section 2.
+    const settle = setTimeout(handlescroll, 500);
+    return () => {
+      window.removeEventListener("scroll", handlescroll);
+      window.removeEventListener("resize", handlescroll);
+      window.removeEventListener("load", handlescroll);
+      clearTimeout(settle);
+    };
+  }, [data]);
 
-  const handlesectionScroll = (sectionId, tabLabel) => {
-    setSection(sectionId);
-    setActiveTab(tabLabel || sectionDefaultTab[sectionId] || "Overview");
+  // Which spy-section each tab lives in, so the scroll-spy doesn't immediately
+  // override a clicked sub-tab (e.g. "More About Project" stays put inside the hero).
+  const labelToSection = {
+    Overview: 1,
+    Highlights: 2,
+    "More About Project": 2,
+    "Floor Plan": 2,
+    "Pricing Details": 3,
+    "Map View": 4,
+    "Contact Builder": 5,
+    Reviews: 6,
+  };
 
-    const sectionRef =
-      sectionId === 2
-        ? section2
-        : sectionId === 3
-        ? section3
-        : sectionId === 4
-        ? section4
-        : sectionId === 5
-        ? section5
-        : sectionId === 6
-        ? section6
-        : null;
+  const handlesectionScroll = (target, tabLabel) => {
+    const owningSection = labelToSection[tabLabel] || 1;
+    sectionRef.current = owningSection;
+    setSection(owningSection);
+    setActiveTab(tabLabel || "Overview");
 
-    if (!sectionRef) {
+    if (!target || target === "top") {
       window.scrollTo({ top: 0, behavior: "smooth" });
-    } else if (sectionRef.current) {
-      window.scrollTo({
-        top: sectionRef.current.offsetTop - reducescroll,
-        behavior: "smooth",
-      });
+      return;
+    }
+
+    const el = document.getElementById(target);
+    if (el) {
+      // rect-based offset works regardless of offsetParent and lands the target
+      // just below the sticky header.
+      const y = el.getBoundingClientRect().top + window.scrollY - reducescroll;
+      window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -192,7 +217,7 @@ const PropertyDescription = () => {
               city={location?.city}
             />
           </div>
-          <div className={styles.section3} id="section3 " ref={section3}>
+          <div className={styles.section3} id="section3" ref={section3}>
             <Section3 pricingdetails={pricing_details} />
           </div>
           <div className={styles.section4} id="section4" ref={section4}>

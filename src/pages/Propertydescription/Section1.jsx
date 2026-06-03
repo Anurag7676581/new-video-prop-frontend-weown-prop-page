@@ -3,19 +3,19 @@ import classNames from "classnames";
 import styles from "./styles.module.css";
 
 const TAB_OPTIONS = [
-  { label: "Overview", sectionId: 1 },
-  { label: "Highlights", sectionId: 2 },
-  { label: "More About Project", sectionId: 2 },
-  { label: "Floor Plan", sectionId: 2 },
-  { label: "Pricing Details", sectionId: 3 },
-  { label: "Map View", sectionId: 4 },
-  { label: "Contact Builder", sectionId: 5 },
-  { label: "Reviews", sectionId: 6 },
+  { label: "Overview", target: "top" },
+  { label: "Highlights", target: "sec-highlights" },
+  { label: "More About Project", target: "sec-about" },
+  { label: "Floor Plan", target: "sec-gallery" },
+  { label: "Pricing Details", target: "section3" },
+  { label: "Map View", target: "section4" },
+  { label: "Contact Builder", target: "section5" },
+  { label: "Reviews", target: "section6" },
 ];
 
 const Section1 = ({ handlesectionScroll, activeTab }) => {
   function changeHandler(option) {
-    handlesectionScroll(option.sectionId, option.label);
+    handlesectionScroll(option.target, option.label);
   }
   const box = document.querySelector("#overflowbox");
   const scrollprev = () => {

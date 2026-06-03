@@ -238,7 +238,7 @@ const Section2 = ({
         </div>
       </div>
 
-      <div className={styles.section2imgdivp}>
+      <div className={styles.section2imgdivp} id="sec-gallery">
         <div className={styles.section2imgdiv1}>
           {allImages?.length > 0
             ? allImages?.map((image, index) => {
@@ -506,7 +506,7 @@ const Section2 = ({
       </div>
 
       <div className={styles.section2descriptionp}>
-        <div className={styles.section2description}>
+        <div className={styles.section2description} id="sec-about">
           <h4 style={{
             fontSize: "1.1rem",
             fontWeight: "600",
@@ -577,7 +577,7 @@ const Section2 = ({
             })}
           </div>
         </div>
-        <div className={styles.section2features}>
+        <div className={styles.section2features} id="sec-highlights">
           <h4 style={{
             fontSize: "1.1rem",
             fontWeight: "600",
